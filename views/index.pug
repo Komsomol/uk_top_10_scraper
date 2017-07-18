@@ -1,9 +1,12 @@
-html
-	head
-		title= title
-	body
-		h1= message
-		div
-			ul
-				for val in data
-					li= val
+include includes/head.pug
+head
+	title= title
+body
+	h1= message
+	div
+		ul
+			for val in data
+				li 
+					a(href='detail/'+val class='button')
+						=val 
+include includes/footer.pug

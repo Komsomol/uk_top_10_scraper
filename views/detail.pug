@@ -1,0 +1,12 @@
+include includes/head.pug
+head
+	title= title
+body
+	h1= message
+	|
+	div(class=controls)
+		a(href='/' class='button') Back
+	|
+	div(class=video)
+		iframe(width='660', height='371', src=video frameborder="0" allowfullscreen)
+include includes/footer.pug
