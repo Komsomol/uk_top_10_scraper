@@ -20,6 +20,7 @@ app.use(compression());
 // set view engine
 app.set('view engine', 'pug');
 // set static path for files
+
 app.use(express.static('./views/'));
 
 // set port
@@ -48,7 +49,8 @@ app.get('/detail/:name', (request, response ) => {
 	// response.send(name);
 
 	getVideo((request.params.name).replace('(3D)', '')).then((data) => {
-		// console.log(data);
+		console.log(data);
+		
 		response.render('detail', {
 			title: request.params.name,
 			message: request.params.name,

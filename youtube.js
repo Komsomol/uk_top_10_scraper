@@ -9,16 +9,20 @@
 */
 const youtubeapp = require('youtube-node');
 const youtube = new youtubeapp();
+const env = require('env2')('./.env');
 
-youtube.setKey('ENTER YOUR OWN API KEY');
+
+youtube.setKey(process.env.YOUTUBE_API_KEY);
 
 const getVideo = (name) => {
 	return new Promise((resolve, reject) => {
 		youtube.search(name + 'Trailer', 2, (error, result) => {
 			if (error) {
+				console.log(error);
 				return reject({status:false});
 			}
 			else {
+				console.log(result);
 				if(result.pageInfo.totalResults === 0){
 					return reject({status:false});
 				} else {
