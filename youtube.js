@@ -9,7 +9,7 @@
 */
 const youtubeapp = require('youtube-node');
 const youtube = new youtubeapp();
-const env = require('env2')('./.env');
+// const env = require('env2')('./.env');
 
 
 youtube.setKey(process.env.YOUTUBE_API_KEY);
